@@ -1,0 +1,13 @@
+class Solution {
+    static String armStrong(int n) {
+        int len = (int)Math.ceil(Math.log10(n+1));
+        int num = 0;
+        int val = n;
+        while(val>0){
+            num = num + (int)Math.pow(val%10,len);
+            val/=10;
+        }
+        if(num==n) return "true";
+        else return "false";
+    }
+}
